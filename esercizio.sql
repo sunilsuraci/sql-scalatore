@@ -32,6 +32,6 @@ group by nazione.continente
 
 --N6 Calcolare	codice	fiscale,	nazione	di	nascita,	continente	di	nascita	di	ogni	scalatore	nato	in	un	continente	diverso	dall’America,	e,	solo	se	egli	ha	effettuato	almeno	una	scalata,	affiancare	queste	informazioni	alle	nazioni	in	cui	ha	effettuato	scalate.
 
-SELECT scalatore.cf, scalatore.nazionenascita, scalatore.
-FROM
-WHERE
+SELECT scalatore.cf, scalatore.nazionenascita
+FROM scalatore, scalata, nazione
+WHERE scalatore.nazionenascita = nazione.nome and nazione.continente != 'America'
