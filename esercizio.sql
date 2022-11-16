@@ -12,6 +12,6 @@ order by scalatore.cf, scalata.nazione
 
 --N3 Calcolare	le	nazioni	(mostrando,	per	ciascuna,	anche	il	continente)	nelle	quali	è	stata	effettuata	almeno	una	scalata	da	uno	scalatore	minorenne.
 
-select distinct scalata.nazione, scalata.anno
+select distinct scalata.nazione, scalata.anno, scalatore.cf
 FROM scalata, nazione, scalatore
-WHERE scalata.anno - scalatore.annonascita < 18
+WHERE (scalata.anno - scalatore.annonascita) < 18 and scalata.nazione = nazione.nome and scalatore.cf = scalata.scalatore
