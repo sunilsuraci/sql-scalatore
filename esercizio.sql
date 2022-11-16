@@ -15,3 +15,5 @@ order by scalatore.cf, scalata.nazione
 select distinct scalata.nazione, scalata.anno, scalatore.cf
 FROM scalata, nazione, scalatore
 WHERE (scalata.anno - scalatore.annonascita) < 18 and scalata.nazione = nazione.nome and scalatore.cf = scalata.scalatore
+
+--N4 Per	ogni	nazione,	calcolare	il	numero	di	scalate	effettuate	da	scalatori	nati	in	quella	nazione
