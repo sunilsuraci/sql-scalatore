@@ -17,3 +17,8 @@ FROM scalata, nazione, scalatore
 WHERE (scalata.anno - scalatore.annonascita) < 18 and scalata.nazione = nazione.nome and scalatore.cf = scalata.scalatore
 
 --N4 Per	ogni	nazione,	calcolare	il	numero	di	scalate	effettuate	da	scalatori	nati	in	quella	nazione
+
+SELECT scalata.nazione, count(scalata.nazione)
+FROM nazione, scalatore, scalata 
+WHERE scalata.nazione = scalatore.nazionenascita
+group by scalatore.nazionenascita, scalata.nazione
