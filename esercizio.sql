@@ -5,6 +5,6 @@ WHERE scalatore.cf = scalata.scalatore
 
 --N2 Per	ogni	scalatore	nato	prima	del	1980,	calcolare	tutti	i	continenti	in	cui	ha	effettuato	una	scalata,	ordinando	il	risultato	per	codice	fiscale	e,	a	parità	di	codice	fiscale,	per	il	nome	del	continente
 
-SELECT scalatore.annonascita, scalatore.cf, scalata.scalatore, nazione.nome
+SELECT Distinct scalatore.annonascita, scalatore.cf, scalata.scalatore, nazione.nome
 FROM scalatore, scalata, nazione
-WHERE scalatore annonascita < 1980 and
+WHERE scalatore.annonascita < 1980 and scalatore.cf = scalata.scalatore and nazione.nome = scalata.nazione
