@@ -29,3 +29,9 @@ SELECT  nazione.continente,  count( distinct scalata.nazione)
 FROM nazione, scalatore, scalata
 WHERE scalatore.nazionenascita = scalata.nazione and nazione.nome = scalata.nazione and scalatore.cf = scalata.scalatore
 group by nazione.continente
+
+--N6 Calcolare	codice	fiscale,	nazione	di	nascita,	continente	di	nascita	di	ogni	scalatore	nato	in	un	continente	diverso	dall’America,	e,	solo	se	egli	ha	effettuato	almeno	una	scalata,	affiancare	queste	informazioni	alle	nazioni	in	cui	ha	effettuato	scalate.
+
+SELECT scalatore.cf, scalatore.nazionenascita, scalatore.
+FROM
+WHERE
