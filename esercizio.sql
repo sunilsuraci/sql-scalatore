@@ -32,6 +32,21 @@ group by nazione.continente
 
 --N6 Calcolare	codice	fiscale,	nazione	di	nascita,	continente	di	nascita	di	ogni	scalatore	nato	in	un	continente	diverso	dall’America,	e,	solo	se	egli	ha	effettuato	almeno	una	scalata,	affiancare	queste	informazioni	alle	nazioni	in	cui	ha	effettuato	scalate.
 
-SELECT scalatore.cf, scalatore.nazionenascita
+SELECT distinct scalatore.cf, scalatore.nazionenascita, nazione.continente
 FROM scalatore, scalata, nazione
 WHERE scalatore.nazionenascita = nazione.nome and nazione.continente != 'America'
+
+--N7 Per	ogni	nazione	e	per	ogni	anno,	calcolare	il	numero	di		scalate	effettuate	in	quella	nazione	e	in	quell’anno,	ma	solo	se	tale	numero	è	maggiore	di	1.	Nel	risultato	le	nazioni	dello	stesso	continente	devono	essere	mostrati	in	tuplecontigue,	e	le	tuplerelative	allo	stesso	continente	devono	essere	ordinate	per	anno.
+
+
+
+
+
+
+--N8 Per	ogni	nazione	N,	calcolare	il	numero	medio	di	scalate	effettuate	all’anno	in	Nda	scalatori	nati	in	nazioni	diverse	da	N.
+
+
+
+
+
+--N9 Calcolare	gli	scalatori	tali	che	tutte	le	scalate	che	hanno	effettuato	nella	nazione	di	nascita	le	hanno	effettuate	quando	erano	minorenni.
