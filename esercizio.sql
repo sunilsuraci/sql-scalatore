@@ -25,7 +25,7 @@ group by scalatore.nazionenascita, scalata.nazione
 
 --N5 Per	ogni	continente,	calcolare	il	numero	di	scalate	effettuate	da	scalatori	nati	in	una	nazione	di	quel	continente
 
-SELECT  distinct count(scalata.nazione)
+SELECT  nazione.continente,  count( distinct scalata.nazione)
 FROM nazione, scalatore, scalata
-WHERE scalatore.nazionenascita = scalata.nazione 
-group by scalata.nazione
+WHERE scalatore.nazionenascita = scalata.nazione and nazione.nome = scalata.nazione and scalatore.cf = scalata.scalatore
+group by nazione.continente
