@@ -54,5 +54,5 @@ WHERE scalatore.nazionenascita = nazione.nome and nazione.continente != 'America
 select s.anno, scalatore.nazionenascita, count(*) 
 FROM scalatore join scalata s on scalatore.cf = s.scalatore
     join scalata s2 on scalatore.nazionenascita = s2.nazione
-WHERE (s.anno - scalatore.annonascita) > 18 and scalatore.nazionenascita = scalatore.nazionenascita
+WHERE (s.anno - scalatore.annonascita) > 18 and scalatore.nazionenascita = scalatore.nazionenascita and s.scalatore = scalatore.cf
 group by s.anno, scalatore.nazionenascita
